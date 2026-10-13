@@ -1,0 +1,83 @@
+.end-page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.end-page-content {
+    text-align: center;
+    color: white;
+    max-width: 600px;
+    padding: 40px;
+    animation: slideUp 1.2s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.end-message {
+    margin-bottom: 40px;
+}
+
+.end-title {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.end-question {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.end-note {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.end-close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.end-close-btn:hover {
+    background: white;
+    color: #667eea;
+    transform: scale(1.05);
+}

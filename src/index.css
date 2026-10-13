@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+:root {
+  --bg-color: #F2F0E6;
+  /* Warm Beige */
+  --surface-color: #FFFFFF;
+  --text-primary: #1A1A1A;
+  /* Soft Black */
+  --text-secondary: #4A5568;
+  /* Slate Blue/Grey */
+  --accent-color: #8EAAE5;
+  /* Soft Muted Blue */
+  --marker-red: #2C3E50;
+  /* Deep Navy (Replacing Red) */
+  --tape-color: rgba(220, 210, 190, 0.8);
+  /* Masking Tape Beige */
+  --font-family: 'Patrick Hand', cursive;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  /* Subtle grain texture instead of dots for a cleaner look */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}

@@ -1,0 +1,43 @@
+.wrapper {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+  transform: rotate(-2deg);
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-shadow: 3px 3px 0px var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  background: var(--accent-color);
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  transform: rotate(2deg);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.playlist-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+}

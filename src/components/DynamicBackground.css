@@ -1,0 +1,115 @@
+/* Container for the background effects */
+.dynamic-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Let clicks pass through */
+    z-index: 0;
+    /* Behind content */
+    overflow: hidden;
+}
+
+/* --- Melodrama: Rain --- */
+.rain-container {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.raindrop {
+    position: absolute;
+    top: -20px;
+    width: 2px;
+    height: 15px;
+    background: rgba(174, 194, 224, 0.6);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+/* --- Ethereal Love: Sun Rays --- */
+.rays-container {
+    width: 100%;
+    height: 100%;
+    /* Brightened the radial center for more "glow" */
+    background: radial-gradient(circle at 50% 0%, rgba(255, 230, 200, 0.4), transparent 70%);
+}
+
+.ray {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    width: 100%;
+    height: 200%;
+    /* Increased opacity for better visibility */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, transparent 80%);
+    transform-origin: center top;
+    animation: rotateRay linear infinite alternate;
+    /* Add a blur to make it softer and more "ethereal" */
+    filter: blur(5px);
+}
+
+@keyframes rotateRay {
+    from {
+        transform: translateX(-50%) rotate(-20deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(20deg);
+    }
+}
+
+/* --- Liminal Spaces: Fog --- */
+.fog-container {
+    width: 100%;
+    height: 100%;
+    background: #00000000;
+}
+
+/* CSS-Only Procedural Fog */
+.fog-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 50%;
+    /* Create "cloud" shapes using radial gradients */
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 60%),
+        radial-gradient(circle at 20% 60%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+    background-size: 50% 100%;
+    /* Repeat the pattern */
+    opacity: 0.6;
+    /* Higher opacity to be visible */
+    filter: blur(15px);
+    /* Blend them into a fog */
+    animation: drift linear infinite;
+}
+
+.fog-layer.two {
+    height: 70%;
+    bottom: -10%;
+    opacity: 0.4;
+    background-size: 60% 100%;
+    animation-duration: 45s;
+    animation-direction: reverse;
+    z-index: 1;
+}
+
+@keyframes drift {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

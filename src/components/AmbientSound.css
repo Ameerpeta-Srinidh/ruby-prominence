@@ -1,0 +1,31 @@
+.ambient-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.ambient-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+    backdrop-filter: blur(5px);
+}
+
+.ambient-btn:hover {
+    transform: scale(1.05);
+}
+
+.ambient-btn.active {
+    background: #74b9ff;
+    /* Rain blue */
+    color: white;
+    border-color: #0984e3;
+    box-shadow: 0 0 10px rgba(116, 185, 255, 0.5);
+}

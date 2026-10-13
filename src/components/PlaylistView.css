@@ -1,0 +1,465 @@
+.playlist-view {
+    animation: slideUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    position: relative;
+    /* Notebook holes */
+    background-image: radial-gradient(#f0f0f0 20%, transparent 20%);
+    background-size: 20px 20px;
+    background-position: -10px 0;
+}
+
+/* Notebook spiral/edge effect */
+.playlist-view:before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #5D737E;
+    /* Margin line */
+    opacity: 0.4;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) rotate(-2deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.playlist-header {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: center;
+    position: relative;
+    padding-left: 50px;
+    /* Space for margin line */
+}
+
+.back-button {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    font-size: 1.5rem;
+    font-family: 'Patrick Hand', cursive;
+    color: var(--text-secondary);
+    background: var(--accent-color);
+    padding: 5px 15px;
+    transform: rotate(-3deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.back-button:hover {
+    transform: rotate(0deg) scale(1.1);
+}
+
+.header-cover {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 8px solid white;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    transform: rotate(-3deg);
+}
+
+.header-info {
+    flex: 1;
+}
+
+.header-title {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.header-description {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    transform: rotate(1deg);
+}
+
+.play-all-button {
+    margin-top: 20px;
+    background: var(--marker-red);
+    color: white;
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    /* Organic shape */
+    border: 2px solid transparent;
+    transform: rotate(-1deg);
+    transition: all 0.2s;
+}
+
+.play-all-button:hover {
+    transform: rotate(2deg) scale(1.05);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.song-list-container {
+    padding-left: 50px;
+}
+
+.song-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.song-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px dashed #ccc;
+    /* Dotted line like notebook */
+    transition: background 0.2s;
+}
+
+.song-item:hover {
+    background: rgba(142, 170, 229, 0.15);
+    /* Soft Blue Tint */
+}
+
+.song-number {
+    font-size: 1.5rem;
+    width: 40px;
+    color: var(--text-secondary);
+    font-weight: bold;
+}
+
+.song-title {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+
+.song-artist {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-left: 15px;
+    /* Added spacing */
+    position: relative;
+    padding-left: 15px;
+}
+
+.song-artist::before {
+    content: '-';
+    position: absolute;
+    left: 0;
+    opacity: 0.5;
+}
+
+.song-duration {
+    font-family: monospace;
+    /* Contrast font */
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-left: auto;
+}
+
+.song-play-btn {
+    margin-left: 20px;
+    font-size: 1.5rem;
+    color: var(--marker-red);
+    opacity: 0.5;
+}
+
+.song-item:hover .song-play-btn {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .playlist-header {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 20px;
+    }
+}
+
+/* --- Ghost Player: Cassette UI --- */
+.cassette-player {
+    background: #333;
+    width: 300px;
+    height: 180px;
+    border-radius: 12px;
+    position: relative;
+    padding: 15px;
+    box-shadow:
+        inset 0 0 10px rgba(0, 0, 0, 0.8),
+        0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    transform: rotate(1deg);
+    border: 4px solid #555;
+    background-image: linear-gradient(45deg, #333 25%, #2a2a2a 25%, #2a2a2a 50%, #333 50%, #333 75%, #2a2a2a 75%, #2a2a2a 100%);
+    background-size: 10px 10px;
+}
+
+.cassette-label-area {
+    background: #eee;
+    width: 100%;
+    height: 60%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cassette-title {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 5px;
+    z-index: 2;
+    text-align: center;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tape-window {
+    width: 70%;
+    height: 60px;
+    background: #fff;
+    border-radius: 30px;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: #222;
+}
+
+.tape-wheel {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #fff 30%, transparent 31%),
+        conic-gradient(#fff 0deg, #fff 45deg, transparent 45deg, transparent 90deg, #fff 90deg, #fff 135deg, transparent 135deg, transparent 180deg, #fff 180deg, #fff 225deg, transparent 225deg, transparent 270deg, #fff 270deg, #fff 315deg, transparent 315deg);
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.spinning {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cassette-controls {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    z-index: 5;
+}
+
+.cassette-btn {
+    background: #e0e0e0;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 5px 15px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 0 #999;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.cassette-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 0 0 #999;
+}
+
+.hidden-youtube-player {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0.01;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* --- Narrative Features Styles --- */
+
+.lyric-highlight-note {
+    font-family: 'Patrick Hand', cursive;
+    color: #333;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.4;
+    background: #fff;
+    padding: 15px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+    transform: rotate(-2deg);
+    position: relative;
+    border: 1px solid #eee;
+    animation: slideUpFade 0.5s ease;
+}
+
+.tape-strip {
+    width: 80px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px) rotate(-2deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-2deg);
+    }
+}
+
+.story-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 8px;
+    opacity: 0.6;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.story-btn:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.micro-story {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-top: 5px;
+    background: #fff9c4;
+    /* Post-it yellow */
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transform: rotate(1deg);
+    max-width: 80%;
+    border-left: 3px solid #fbc02d;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px) rotate(1deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(1deg);
+    }
+}
+
+.song-item.active {
+    background: rgba(142, 170, 229, 0.2);
+    /* Tint for active song */
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Emotional Timeline Sections */
+.emotional-section {
+    margin-bottom: 40px;
+    animation: fadeInSection 0.6s ease;
+}
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.emotional-category-title {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px dashed var(--accent-color);
+    transform: rotate(-1deg);
+}
+
+
+
+.song-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* End Playlist Button */
+.end-playlist-btn {
+    margin: 60px auto 40px;
+    display: block;
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-family: 'Patrick Hand', cursive;
+    border-radius: 30px;
+    border: 1px solid var(--text-secondary);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.end-playlist-btn:hover {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
